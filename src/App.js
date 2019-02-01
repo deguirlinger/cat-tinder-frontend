@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Cats from './pages/Cats.js';
-import NewCat from './pages/NewCat';
+import NewCat from './pages/NewCat.js';
 
 import Header from './Header.js';
 
@@ -33,6 +33,10 @@ class App extends Component {
         }
       ]
     }
+
+  }
+  addCat(newCat){
+    console.log(newCat);
   }
   render() {
     return (
@@ -40,7 +44,8 @@ class App extends Component {
         <header />
         <Router>
           <Switch>
-            <Route exact path="/cats" render={(props) => <Cats cats={this.state.cats}/>} />
+            <Route exact path="/Cats" render={(props) => <Cats cats={this.state.cats}/>} />
+            <Route exact path="/NewCat" render={(props) => <NewCat onSubmit={this.addCat.bind(this)}/>} />
           </Switch>
         </Router>
       </div>
