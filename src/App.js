@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Cats from './pages/Cats.js';
-// import NewCat from './pages/NewCat';
+import NewCat from './pages/NewCat';
 
 import Header from './Header.js';
 

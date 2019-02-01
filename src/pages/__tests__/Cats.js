@@ -31,3 +31,9 @@ it('Cat renders without crashing', () => {
   const div = document.createElement('div')
   ReactDom.render(<Cats cats={ cats } />, div)
 })
+
+it('Renders the cats', ()=>{
+  const component = mount(<Cats cats={cats} />)
+  const headings = component.find('h4 > .cat-name')
+  expect(headings.length).toBe(3)
+})
